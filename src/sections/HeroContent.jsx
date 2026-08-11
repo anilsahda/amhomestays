@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from '../components/common/Button'
 
 export function HeroContent() {
+  const [searchQuery, setSearchQuery] = useState('')
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault()
+    window.location.href = `/search?q=${encodeURIComponent(searchQuery)}`
+  }
+
   return (
-    <div className="flex flex-col items-center justify-center text-center
-    ">
+    <div className="flex flex-col items-center justify-center text-center">
       {/* Subtitle */}
       <p className="text-xl sm:text-2xl font-bold text-stone-800 tracking-wide mb-2">
         Introducing
@@ -17,10 +23,12 @@ export function HeroContent() {
 
       {/* Search Input Bar matching screenshot */}
       <div className="w-full max-w-2xl mb-8">
-        <form onSubmit={(e) => e.preventDefault()} className="relative flex items-center bg-white/50 border border-stone-400 rounded-sm overflow-hidden shadow-inner">
+        <form onSubmit={handleSearchSubmit} className="relative flex items-center bg-white/50 border border-stone-400 rounded-sm overflow-hidden shadow-inner">
           <input
             type="text"
             placeholder=""
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full px-4 py-2.5 text-stone-900 bg-transparent focus:outline-none text-sm"
           />
           <button

@@ -20,6 +20,7 @@ import BlogArticlePage3 from './pages/BlogArticlePage3'
 import BlogArticlePage4 from './pages/BlogArticlePage4'
 import BookingPage from './pages/BookingPage'
 import RequestQuotePage from './pages/RequestQuotePage'
+import SearchResultsPage from './pages/SearchResultsPage'
 
 function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname)
@@ -34,6 +35,14 @@ function App() {
 
   const normPath = (currentPath || '').toLowerCase().replace(/\/$/, '')
   const normHash = (window.location.hash || '').toLowerCase()
+
+  if (
+    normPath === '/search' ||
+    normPath.startsWith('/search') ||
+    window.location.search.includes('q=')
+  ) {
+    return <SearchResultsPage />
+  }
 
   if (
     normPath === '/request-a-quote' ||
