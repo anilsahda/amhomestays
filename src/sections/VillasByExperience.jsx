@@ -29,10 +29,10 @@ export function VillasByExperience() {
 
         {/* Bottom Action Buttons Row */}
         <div className="flex flex-wrap items-center justify-center gap-4">
-          <Button variant="black" size="lg" className="px-8 font-semibold">
+          <Button variant="black" size="lg" className="px-8 font-semibold" href="/booking">
             Book Now
           </Button>
-          <Button variant="orange" size="lg" className="px-8 font-semibold">
+          <Button variant="orange" size="lg" className="px-8 font-semibold" href="/request-a-quote">
             Request a Quote
           </Button>
         </div>

@@ -34,10 +34,10 @@ export function HeroContent() {
 
       {/* Two Action Pill Buttons matching screenshot */}
       <div className="flex flex-wrap items-center justify-center gap-4">
-        <Button variant="black" size="lg" className="px-8">
+        <Button variant="black" size="lg" className="px-8" href="/booking">
           Book Now
         </Button>
-        <Button variant="orange" size="lg" className="px-8">
+        <Button variant="orange" size="lg" className="px-8" href="/request-a-quote">
           Request a Quote
         </Button>
       </div>

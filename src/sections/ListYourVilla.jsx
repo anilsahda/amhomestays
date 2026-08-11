@@ -9,7 +9,7 @@ export function ListYourVilla() {
   return (
     <section className="w-full bg-white py-12 md:py-16 px-4 sm:px-6 lg:px-8 border-t border-gray-100">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-        
+
         {/* Left Column: Information & Bullets */}
         <div className="flex flex-col text-left">
           <h3 className="text-2xl sm:text-3xl font-bold text-gray-800 tracking-tight mb-2">
@@ -32,10 +32,10 @@ export function ListYourVilla() {
 
           {/* Action Buttons Row */}
           <div className="flex flex-wrap items-center gap-4">
-            <Button variant="black" size="md" className="px-8 font-semibold">
+            <Button variant="black" size="md" className="px-8 font-semibold" href="/booking">
               Book Now
             </Button>
-            <Button variant="orange" size="md" className="px-8 font-semibold">
+            <Button variant="orange" size="md" className="px-8 font-semibold" href="/request-a-quote">
               Request a Quote
             </Button>
           </div>

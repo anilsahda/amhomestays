@@ -7,7 +7,7 @@ export function PropertyCard({ property }) {
 
   return (
     <div className="bg-white rounded-3xl overflow-hidden shadow-lg border border-stone-200/80 flex flex-col lg:flex-row hover:shadow-xl transition-shadow duration-300">
-      
+
       {/* Property Image Showcase */}
       <div className="relative lg:w-1/2 aspect-[4/3] lg:aspect-auto overflow-hidden">
         <img
@@ -67,10 +67,10 @@ export function PropertyCard({ property }) {
 
         {/* Action Buttons matching Wunderhomes style */}
         <div className="flex flex-wrap items-center gap-3 pt-6 border-t border-stone-100">
-          <Button variant="black" size="md" className="flex-1 justify-center">
+          <Button variant="black" size="md" className="flex-1 justify-center" href="/booking">
             Book Now
           </Button>
-          <Button variant="orange" size="md" className="flex-1 justify-center">
+          <Button variant="orange" size="md" className="flex-1 justify-center" href="/request-a-quote">
             Request a Quote
           </Button>
         </div>

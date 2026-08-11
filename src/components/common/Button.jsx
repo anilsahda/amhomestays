@@ -6,6 +6,10 @@ export function Button({
   size = 'md',
   className = '',
   type = 'button',
+  href,
+  target,
+  rel,
+  onClick,
   ...props
 }) {
   const baseStyles = 'inline-flex items-center justify-center font-medium rounded-full transition-all duration-200 focus:outline-none cursor-pointer'
@@ -24,8 +28,28 @@ export function Button({
 
   const combinedClasses = `${baseStyles} ${variants[variant] || variants.orange} ${sizes[size] || sizes.md} ${className}`
 
+  if (href) {
+    return (
+      <a
+        href={href}
+        target={target}
+        rel={rel}
+        className={combinedClasses}
+        onClick={(e) => {
+          if (onClick) onClick(e)
+          if (!target && href.startsWith('/')) {
+            window.location.href = href
+          }
+        }}
+        {...props}
+      >
+        {children}
+      </a>
+    )
+  }
+
   return (
-    <button type={type} className={combinedClasses} {...props}>
+    <button type={type} className={combinedClasses} onClick={onClick} {...props}>
       {children}
     </button>
   )

@@ -2,7 +2,7 @@ import React from 'react'
 
 export function Logo({ className = '' }) {
   return (
-    <a href="#" className={`flex items-center gap-3 group cursor-pointer ${className}`}>
+    <a href="/" className={`flex items-center gap-3 group cursor-pointer ${className}`}>
       {/* Flower / Mandala Icon */}
       <svg className="w-9 h-9 text-amber-900/80 stroke-[1.25]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
         <circle cx="12" cy="12" r="3" />
