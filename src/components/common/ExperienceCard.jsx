@@ -2,14 +2,18 @@ import React from 'react'
 import { Pencil, Trash2 } from 'lucide-react'
 import Button from './Button'
 
-export function ExperienceCard({ title, description, icon, link = '#', onEdit, onDelete }) {
+export function ExperienceCard({ title, description, icon, image, link = '#', onEdit, onDelete }) {
+  const imgSrc = image || icon
+
   return (
     <div className="flex flex-col items-center justify-between text-center bg-white p-6 rounded-xl border border-gray-100 shadow-xs hover:shadow-md transition-shadow duration-300 h-full">
       <div className="flex flex-col items-center w-full">
-        {/* Experience Icon */}
-        <div className="w-12 h-12 mb-4 flex items-center justify-center">
-          <img src={icon} alt={title} className="max-w-full max-h-full object-contain" />
-        </div>
+        {/* Experience Icon / Image */}
+        {imgSrc && (
+          <div className="w-12 h-12 mb-4 flex items-center justify-center overflow-hidden rounded-md">
+            <img src={imgSrc} alt={title} className="max-w-full max-h-full object-contain" />
+          </div>
+        )}
 
         {/* Experience Title */}
         <h4 className="text-lg font-bold text-gray-800 tracking-wider mb-2">
