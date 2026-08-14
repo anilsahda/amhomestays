@@ -29,7 +29,7 @@ function App() {
     const handlePopState = () => {
       setCurrentPath(window.location.pathname)
     }
-    window.addEventListener('popstate', handlePopState)
+     window.addEventListener('popstate', handlePopState)
     return () => window.removeEventListener('popstate', handlePopState)
   }, [])
 
